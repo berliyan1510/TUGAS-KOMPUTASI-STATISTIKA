@@ -1,5 +1,3 @@
-# TUGAS-KOMPUTASI-STATISTIKA-WEEK-1
-
 # 📊 Tugas Komputasi Statistika - Week 1
 
 Repository ini berisi dokumentasi dan hasil pengerjaan tugas mingguan untuk mata kuliah **Komputasi Statistika**.
