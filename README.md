@@ -15,9 +15,3 @@ Repository ini berisi hasil pengerjaan tugas mingguan untuk mata kuliah **Komput
 
 
 
-## 🛠️ Alat & Bahasa Pemrograman
-
-![R](https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r&logoColor=white)
-![RStudio](https://img.shields.io/badge/RStudio-75AADB?style=for-the-badge&logo=RStudio&logoColor=white)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-
