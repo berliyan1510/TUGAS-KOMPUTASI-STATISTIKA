@@ -1,0 +1,110 @@
+---
+title: "tugas komstat 2"
+author: "Berliyan"
+date: "2026-09-12"
+output: html_document
+---
+
+# Pada kali ini saya mendapatkan tugas dengan soal:
+
+
+Masukkan data iris di R kemudian kerjakan hal berikut:
+
+
+1. Tampilkan data Sepal.Length saja
+
+
+2. Sebutkan tipe data tiap kolom
+
+
+3. Buat variabel baru dengan nama turunan yang berasal/ turunan dari variabel Sepal.Width. Nilai variabel turunan hanya memiliki dua nilai yaitu "Besar" dan "Kecil". Besar jika Sepal.Width lebih besar dari 3, begitu pula sebaliknya.
+
+
+4. Ubah variabel turunan menjadi sepal
+
+
+5. Ambil data dengan sepal bernilai besar dari species virginica
+
+
+6. Cek jumlah species dalam data
+
+
+7. Pecah data iris menjadi 3 data frame dengan tiap data frame khusus untuk species tertentu
+
+
+8. Dari setiap data frame species, urutkan data berdasarkan Sepal.Width
+
+```{r}
+#Data Iris
+print(iris)
+```
+# 1. Tampilkan data sepal.length saja
+
+
+```{r}
+iris$Sepal.Length
+```
+# 2. Sebutkan Tipe data tiap kolom
+
+
+```{r}
+str(iris)
+```
+# 3. Menambahkan variable turunan ke data set
+
+
+```{r}
+library(dplyr)
+iris_1 <- iris %>%
+  mutate(
+    turunan = ifelse(Sepal.Width > 3, "Besar", "Kecil")
+  )
+print (iris_1)
+```
+# 4. ubah variable turunan menjadi sepal
+
+```{r}
+iris_1 <- iris_1 %>%
+  rename(sepal=turunan)
+iris_1
+```
+#v5. Ambil data sepal bernilai besar dengan spesies virginica
+
+```{r}
+data_virginica_besar <- iris_1 %>% 
+  filter(Species == "virginica", sepal == "Besar")
+data_virginica_besar
+```
+# 6. cek jumlah spesies dalam data
+
+
+```{r}
+table(iris_1$Species)
+```
+
+# 7. pecah data iris
+
+
+```{r}
+df_setosa <- filter(iris, Species == "setosa")
+df_setosa
+df_versicolor <-  filter(iris, Species == "versicolo")
+df_versicolor
+df_virginica <-  filter(iris, Species == "virginica")
+df_virginica
+
+iris_split <- split(iris, iris$Species)
+iris_split
+```
+
+# 8. urutkan data berdasarkan besar kelopak
+
+
+```{r}
+df_setosa_sorted <- df_setosa %>% arrange(Sepal.Width)
+df_setosa_sorted
+df_versicolor_sorted <- df_versicolor %>% arrange(Sepal.Width)
+df_versicolor_sorted
+df_virginica_sorted <- df_virginica %>% arrange(Sepal.Width)
+df_virginica_sorted
+```
